@@ -70,3 +70,154 @@ button {
   cursor: pointer;
   transition: background 1s;
 }
+
+/*** HEADER STYLE ***/
+
+header {
+  background-color: var(--header-background-color);
+  min-height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* PARA O BEFORE RESPEITAR O QUE TAMANHO DO HEADER */
+  position: relative;
+}
+
+header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("../images/banner/florest.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 90%;
+  filter: saturate(0);
+  opacity: 0.2;
+}
+
+.header-content {
+  margin: 30px;
+  max-width: 700px;
+  padding: 80x 20px;
+  text-align: center;
+
+  /* SUBINDO O CONTEÚDO EM CIMA DA IMAGEM */
+  z-index: 2;
+}
+
+.header-content img {
+  width: 80%;
+}
+
+.header-content p {
+  margin: 30px 0 50px;
+  /* text-align: justify; */
+}
+
+.header-content button {
+  border: 3px solid var(--primary-color);
+  color: var(--primary-color)
+}
+
+.header-content button:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-color-contrast);
+}
+
+/*** WORLD CHARACTERS STYLES ***/
+
+.world-characters {
+  width: 100%;
+  max-width: 900px;
+  position: absolute;
+}
+
+#top-characters {
+  height: 100%;
+  background-color: var(--character-top-image-color);
+  bottom: -3px;
+  
+  mask: var(--character-top-image-src) bottom / 100% no-repeat;
+  /* PARA FUNCIONAR NO CHROME */
+  -webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;
+}
+
+#bottom-characters {
+  height: 500px;
+  background-color: var(--character-bottom-image-color);
+  bottom: -3px;
+  transform: rotateZ(180deg) scaleX(-1);
+  position: relative;
+
+  mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+  -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*** INVERTED WORLD SECTION STYLES ***/
+
+section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 95px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+#section-inverted-world {
+  align-items: center;
+}
+
+#section-inverted-world .section-texts {
+  width: 50%;
+  text-align: left;
+}
+
+#section-inverted-world .section-texts h2 {
+  max-width: 300px;
+}
+
+#section-inverted-world .section-texts p {
+  text-align: justify;
+}
+
+/*** TRAILER SECTION STYLES ***/
+
+#section-stranger-things-trailer .section-texts {
+  width: 50%;
+  text-align: right;
+}
+
+#section-stranger-things-trailer .section-texts h2{
+  max-width: 425px;
+  display: inline-block;
+}
+
+#section-stranger-things-trailer .section-texts p {
+  text-align: justify;
+}
+
+#section-stranger-things-trailer .video-frame {
+  background-color: var(--primary-color);
+}
+
+#section-stranger-things-trailer .video-frame iframe{
+  position: relative;
+  bottom: 24px;
+  left: 24px;
+  
+  /* BORDINHA DO VIDEO */
+  border: 3px solid;
+  border-image: linear-gradient(var(--primary-color), var(--primary-color-contrast));
+  border-image-slice: 10;
+}
